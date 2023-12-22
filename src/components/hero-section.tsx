@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from './ui/button'
-
+import Image from 'next/image'
+import { HERO_IMAGE } from '@/lib/strings'
 const HeroSection = () => {
   return (
     <div className=''>
@@ -14,10 +15,12 @@ const HeroSection = () => {
           Read More
         </Button>
       </div>
-
-      <div>
-        <p>used by </p>
-      </div>
+      {/* <Image
+        width={500}
+        height={200}
+        className='rounded-lg mx-auto my-10 opacity-10 hover:opacity-80 transition-opacity'
+        loading='lazy'
+        src={HERO_IMAGE} alt='image' /> */}
     </div>
   )
 }
