@@ -6,7 +6,7 @@ const MarginWrapper = ({
     extraClass
 }: { children: React.ReactNode, extraClass?:string  }) => {
     return (
-        <div className={twMerge('w-5/6 p-4 h-screen mx-auto', extraClass)}>
+        <div className={twMerge('relative w-5/6 p-4 h-screen mx-auto', extraClass)}>
             {children}
         </div>
     )
