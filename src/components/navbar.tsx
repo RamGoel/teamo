@@ -21,7 +21,7 @@ import { Label } from "@/components/ui/label"
 
 const Navbar = () => {
   return (
-    <div className='bg-gray-200 flex justify-between items-center border-gray-300 border-2 rounded-lg p-3'>
+    <div className='bg-gray-100 flex justify-between items-center border-gray-300 border-2 rounded-lg p-3'>
       <p className='font-semibold  text-lg'>Dochat.</p>
 
       <Dialog>
