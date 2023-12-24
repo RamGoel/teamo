@@ -1,12 +1,13 @@
 import React from 'react'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
+import Navbar from '@/components/navbar';
 
 const DashboardPage = async () => {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
   return (
     <div>
-      {JSON.stringify(user)}
+      <Navbar />
     </div>
   )
 }
