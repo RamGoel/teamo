@@ -1,12 +1,25 @@
-import HeroSection from '@/components/hero-section'
+import HeroSection from '@/app/dashboard/components/hero-section'
 import Navbar from '../components/navbar'
 import Footer from '@/components/footer'
+import { Button } from '@/components/ui/button'
+import { Link } from 'lucide-react'
 
 export default function Home() {
   return (
-    < >
+    <>
       <Navbar />
-      <HeroSection />
+      <div className=''>
+        <h1 className='text-7xl text-center font-bold mt-20 mb-10 w-2/3 mx-auto'>Read your docs <span className='text-violet-700'>quickly</span> in seconds.</h1>
+        <p className='text-lg text-center w-1/2 mx-auto mt-5 mb-5'>Dochat helps you chat with your PDF files easily. Just upload a PDF file and get started in less than 1 minute. </p>
+        <div className='flex items-center justify-center'>
+          <Button asChild className='' size={'lg'}>
+            <Link href={'/dashboard'}>Get Started</Link>
+          </Button>
+          <Button variant={'outline'} className='ml-3' size={'lg'}>
+            Read More
+          </Button>
+        </div>
+      </div>
       <Footer />
     </>
   )
