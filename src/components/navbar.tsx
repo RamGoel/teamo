@@ -1,72 +1,59 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Button } from './ui/button'
-import { LogIn } from 'lucide-react'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { APP_NAME } from '@/lib/strings';
+import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+import Image from 'next/image';
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem } from './ui/dropdown-menu';
+import { LogOutIcon } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = async () => {
+
+  const { getUser } = getKindeServerSession()
+  const user = await getUser()
+
   return (
     <div className='bg-gray-100 flex justify-between items-center border-gray-300 border-2 rounded-lg p-3'>
-      <p className='font-semibold  text-lg'>Dochat.</p>
+      <p className='font-semibold  text-lg'>{APP_NAME}</p>
+      <div>
+        {!user ? <Button className='mr-2 -mt-2' asChild><RegisterLink>Create Account</RegisterLink></Button> : null}
+        {!user ? <Button>
+          <LoginLink>
+            Log in
+          </LoginLink>
+        </Button> : null}
+        {
+          user ? <div className='flex items-center justify-center'>
 
-      <Dialog>
-        <DialogTrigger>
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger>
-                <Button size={'icon'}>
-                  <LogIn size={15} />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Log into your account</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        </DialogTrigger>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Login to your account</DialogTitle>
-            <DialogDescription>
-              Please enter your email and password. Press Log in when you're done.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="grid gap-4 py-4">
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="name" className="text-right">
-                Email
-              </Label>
-              <Input id="name" value="" className="col-span-3" />
-            </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="password" className="text-right">
-                Password
-              </Label>
-              <Input id="password" type='password' value="" className="col-span-3" />
-            </div>
-          </div>
-          <DialogFooter>
-            <Button type="submit">Log in</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+            <DropdownMenu>
+              <DropdownMenuTrigger className='outline-none'>
+              <Image
+                className='rounded-full ml-2'
+                src={user.picture || ""}
+                width={40}
+                height={40}
+                alt='profile-image'
+              /></DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuLabel>{user.given_name} {user.family_name}</DropdownMenuLabel>
+                <DropdownMenuItem>{user.email}</DropdownMenuItem>
+                <DropdownMenuItem><Button className='w-full' size={'sm'}>
+                  <LogoutLink>
+                    <div className='flex items-center justify-between'>
+                      Log out <LogOutIcon className='ml-2' size={12} />
+                    </div>
+                  </LogoutLink>
+                </Button></DropdownMenuItem>
 
-    </div >
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+
+
+          </div> : null
+        }
+      </div >
+    </div>
   )
 }
 

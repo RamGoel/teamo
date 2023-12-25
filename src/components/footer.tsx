@@ -1,4 +1,3 @@
-import { HERO_IMAGE } from '@/lib/strings'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'

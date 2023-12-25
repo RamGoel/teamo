@@ -1,1 +1,1 @@
-export const HERO_IMAGE='https://files.realpython.com/media/Python-driven-Web-Applications_Watermarked.c5692cb81de8.jpg'
+export const APP_NAME='Dochat.'
