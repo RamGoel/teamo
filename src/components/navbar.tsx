@@ -4,7 +4,8 @@ import { Button } from './ui/button'
 import { APP_NAME } from '@/lib/strings';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import Image from 'next/image';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem } from './ui/dropdown-menu';
+import { LogOutIcon } from 'lucide-react';
 
 const Navbar = async () => {
 
@@ -23,28 +24,32 @@ const Navbar = async () => {
         </Button> : null}
         {
           user ? <div className='flex items-center justify-center'>
-            <Button>
-              <LogoutLink>
-                Log out
-              </LogoutLink>
-            </Button>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Image
-                    className='rounded-full ml-2'
-                    src={user.picture}
-                    width={40}
-                    height={40}
-                    alt='profile-image'
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  {user.given_name} {user.family_name} ({user.email})
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-            
+
+            <DropdownMenu>
+              <DropdownMenuTrigger className='outline-none'>
+              <Image
+                className='rounded-full ml-2'
+                src={user.picture || ""}
+                width={40}
+                height={40}
+                alt='profile-image'
+              /></DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuLabel>{user.given_name} {user.family_name}</DropdownMenuLabel>
+                <DropdownMenuItem>{user.email}</DropdownMenuItem>
+                <DropdownMenuItem><Button className='w-full' size={'sm'}>
+                  <LogoutLink>
+                    <div className='flex items-center justify-between'>
+                      Log out <LogOutIcon className='ml-2' size={12} />
+                    </div>
+                  </LogoutLink>
+                </Button></DropdownMenuItem>
+
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+
+
           </div> : null
         }
       </div >
