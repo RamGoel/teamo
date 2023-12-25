@@ -3,6 +3,8 @@ import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextj
 import { Button } from './ui/button'
 import { APP_NAME } from '@/lib/strings';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+import Image from 'next/image';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 
 const Navbar = async () => {
 
@@ -20,11 +22,30 @@ const Navbar = async () => {
           </LoginLink>
         </Button> : null}
         {
-          user ? <Button>
-            <LogoutLink>
-              Log out
-            </LogoutLink>
-          </Button> : null
+          user ? <div className='flex items-center justify-center'>
+            <Button>
+              <LogoutLink>
+                Log out
+              </LogoutLink>
+            </Button>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Image
+                    className='rounded-full ml-2'
+                    src={user.picture}
+                    width={40}
+                    height={40}
+                    alt='profile-image'
+                  />
+                </TooltipTrigger>
+                <TooltipContent>
+                  {user.given_name} {user.family_name} ({user.email})
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+            
+          </div> : null
         }
       </div >
     </div>
