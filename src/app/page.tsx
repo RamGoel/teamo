@@ -1,7 +1,7 @@
-import Navbar from '../components/navbar'
-import Footer from '@/components/footer'
+import Navbar from '../components/common/navbar'
+import Footer from '@/components/common/footer'
 import { Button } from '@/components/ui/button'
-import { APP_NAME } from '@/lib/strings'
+import { APP_NAME } from '@/constants/strings'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 

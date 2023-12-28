@@ -1,4 +1,4 @@
-import ChipRow from '@/components/chip-row'
+import ChipRow from '@/components/common/chip-row'
 import React from 'react'
 
 const Requirements = ({ requirements }: { requirements: any }) => {

@@ -1,5 +1,5 @@
 "use client";
-import ActionLoader from '@/components/action-loader'
+import ActionLoader from '@/components/common/action-loader'
 import { useLoaderStore } from '@/store/loaderStore';
 import React from 'react'
 import { twMerge } from 'tailwind-merge'

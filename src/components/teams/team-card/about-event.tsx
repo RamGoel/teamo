@@ -1,4 +1,4 @@
-import ChipRow from '@/components/chip-row'
+import ChipRow from '@/components/common/chip-row'
 import moment from 'moment'
 import React from 'react'
 

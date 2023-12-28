@@ -1,5 +1,5 @@
 "use client";
-import NameImage from '@/components/name-image'
+import NameImage from '@/components/common/name-image'
 import { Button } from '@/components/ui/button'
 import { ExternalLink } from 'lucide-react'
 import moment from 'moment'

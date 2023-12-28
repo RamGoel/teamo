@@ -1,10 +1,12 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import React from 'react'
-import TeamCard from './team-card'
+import TeamCard from '../teams/team-card'
 import { Loader2 } from 'lucide-react';
-import { fetchEvents, fetchTeams } from '../dashboard.actions';
-import ScreenLoader from '@/components/screen-loader';
-import EventCard from './event-card';
+import { fetchEvents, fetchTeams } from '../../app/dashboard/dashboard.actions';
+import ScreenLoader from '@/components/common/screen-loader';
+import EventCard from '../events/event-card';
+import { Button } from '@/components/ui/button';
+import EventHeader from '../events/event-header';
 
 const DashboardTabs = async () => {
   const teams = await fetchTeams();
@@ -29,6 +31,7 @@ const DashboardTabs = async () => {
 
         </TabsContent>
         <TabsContent value="events">
+          <EventHeader />
           <div className='flex items-center justify-start'>
             {
               events.map((item: any, index: number) => <EventCard key={index} event={item} />)
