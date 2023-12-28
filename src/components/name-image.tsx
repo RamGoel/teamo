@@ -1,8 +1,8 @@
 import React from 'react'
 let sizeMap: any = {
-    "sm": 'h-[25px] w-[25px]',
-    "md": 'h-[40px] w-[40px]',
-    "lg": 'h-[60px] w-[60px]',
+    "sm": 'min-h-[25px] min-w-[25px]',
+    "md": 'min-h-[40px] min-w-[40px]',
+    "lg": 'min-h-[60px] min-w-[60px]',
 }
 const NameImage = ({ text, size='sm' }: { text: string, size?:string }) => {
    
