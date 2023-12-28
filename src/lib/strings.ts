@@ -1,1 +1,1 @@
-export const APP_NAME='Dochat.'
+export const APP_NAME='Teamo'
