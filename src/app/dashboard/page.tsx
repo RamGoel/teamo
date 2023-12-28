@@ -1,7 +1,7 @@
 import React from 'react'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 import Navbar from '@/components/navbar';
-import FileCard from './components/team-card/team-card';
+import FileCard from './components/team-card';
 import DashboardTabs from './components/dashboard-tabs';
 
 const DashboardPage = async () => {
