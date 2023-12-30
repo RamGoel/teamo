@@ -7,18 +7,19 @@ import { Code, MoreHorizontal, CopyIcon, Trash2Icon, PhoneCallIcon, MailIcon } f
 import React from 'react'
 import ExperienceChip from './experience-chip'
 
-const AboutTeam = ({ aboutTeam }: { aboutTeam: any }) => {
-    const { enableLoader } = useLoaderStore();
+const AboutTeam = ({ data }: { data: any }) => {
 
     return (
         <div className='flex items-center justify-start'>
-            <NameImage text={aboutTeam.teamName} size='md' />
+            <NameImage text={data.teamName} size='md' />
             <div className='ml-3 flex-1'>
-                <h1>{aboutTeam.teamName}</h1>
-                <p className='text-xs '>{aboutTeam.teamMembers.length}/{aboutTeam.totalMemberNeeded} members found</p>
-                <ExperienceChip isExperienced={aboutTeam.hackathonExperience} />
+                <h1>{data.teamName}</h1>
+                <p className='text-xs '>{data.teamMembers}/{data.totalMembersNeeded} members found</p>
+                <ExperienceChip isExperienced={data.hackathonExperience} />
             </div>
-            <Button onClick={() => enableLoader()} variant={'outline'} size={'icon'}>
+            <Button onClick={() => {
+                window.open(`mailto:${data.leaderEmail}`)
+            }} variant={'outline'} size={'icon'}>
                 <MailIcon size={15} />
             </Button>
 

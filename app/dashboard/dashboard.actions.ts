@@ -1,20 +1,29 @@
 import API from "@/lib/axios"
+import toast from "react-hot-toast"
 
-export const fetchTeams = async () => {
-    let response =await API.get('http://localhost:3000/api/teams').then(res => {
-        return res.data;
-    }).catch(err => {
-        return err;
+export const fetchTeams = (callback: Function) => {
+    API.get('/team').then(({ data }) => {
+        console.log(data)
+        callback(data.data)
+    }).catch((err: any) => {
+        toast.error(err.message ?? 'Some Error Occured')
     })
-    return response;
 }
 
-export const fetchEvents = async () => {
-    let response = await API.get('http://localhost:3000/api/events').then(res => {
-        console.log(res.data)
-        return res.data;
+export const fetchEvents = (callback: Function) => {
+    API.get('/event').then(({data}) => {
+        callback(data.data)
     }).catch(err => {
-        return err;
+        toast.error(err.message ?? 'Some Error Occured')
     })
-    return response;
+}
+
+
+export const addNewEvent = (data:any, callback:Function) => {
+    API.post('/event', data).then(() => {
+        toast.success('Event Added Successfully')
+        callback();
+    }).catch(err => {
+        toast.error(err.message ?? 'Some Error Occured')
+    })
 }

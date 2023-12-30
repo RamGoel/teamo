@@ -860,17 +860,17 @@
   dependencies:
     tslib "^2.4.0"
 
-"@tanstack/query-core@5.14.2":
-  version "5.14.2"
-  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.14.2.tgz#ef0c1a93e142d5cce90b0ac2d0333a88fc0fbb95"
-  integrity sha512-QmoJvC72sSWs3hgGis8JdmlDvqLfYGWUK4UG6OR9Q6t28JMN9m2FDwKPqoSJ9YVocELCSjMt/FGjEiLfk8000Q==
+"@tanstack/query-core@5.15.5":
+  version "5.15.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.15.5.tgz#4e2b065abce6c7e9a00b2e5441c93c9762273646"
+  integrity sha512-GDwVfu8RPswqVu27+zuIkZINru6CN++zzBbBK+OnAgzxK8N4Obdi+sG2P0EO8rJAOw0fLyQTsO4GCZ1djwaUCg==
 
 "@tanstack/react-query@4.0.0":
-  version "5.15.3"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.15.3.tgz#e3ce4802790a486caa5b74429b012841fade637b"
-  integrity sha512-FP30X1oLUJGcekg92cwpRk6+wtzWcsvbz+ezoxOovI8VhtmTKe7R/hDmdPyFML1RVht01ugq/jmJOKygas61EA==
+  version "5.15.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.15.5.tgz#c8709de9fc28b0caa6aed4f70fefbf0f116d991d"
+  integrity sha512-JSPpzsJPqpNySgjMhAvBpF3gVhtlI/0bZrBmwmcD/ewYYOExll+tIz13gkgnCfNA1qTJQnbv7vdc2gw594vq9Q==
   dependencies:
-    "@tanstack/query-core" "5.14.2"
+    "@tanstack/query-core" "5.15.5"
 
 "@ts-morph/common@~0.19.0":
   version "0.19.0"
@@ -2275,6 +2275,11 @@ globby@^11.1.0:
     merge2 "^1.4.1"
     slash "^3.0.0"
 
+goober@^2.1.10:
+  version "2.1.13"
+  resolved "https://registry.yarnpkg.com/goober/-/goober-2.1.13.tgz#e3c06d5578486212a76c9eba860cbc3232ff6d7c"
+  integrity sha512-jFj3BQeleOoy7t93E9rZ2de+ScC4lQICLwiAQmKMg9F6roKGaLSHoCDYKkWlSafg138jejvq/mTdvmnwDQgqoQ==
+
 gopd@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gopd/-/gopd-1.0.1.tgz#29ff76de69dac7489b7c0918a5788e56477c332c"
@@ -3509,6 +3514,13 @@ react-fast-compare@^2.0.1:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
+
+react-hot-toast@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/react-hot-toast/-/react-hot-toast-2.4.1.tgz#df04295eda8a7b12c4f968e54a61c8d36f4c0994"
+  integrity sha512-j8z+cQbWIM5LY37pR6uZR6D4LfseplqnuAO4co4u8917hBUvXlEqyP1ZzqVLcqoyUesZZv/ImreoCeHVDpE5pQ==
+  dependencies:
+    goober "^2.1.10"
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"

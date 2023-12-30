@@ -1,19 +1,28 @@
+"use client";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
-import React from 'react'
-import TeamCard from '@/components/teams/team-card'
+import React, { useEffect } from 'react'
+import TeamCard from '@/app/dashboard/components/team-card'
 import { fetchEvents, fetchTeams } from '@/app/dashboard/dashboard.actions';
+import EventCard from '@/app/dashboard/components/event-card';
+import EventHeader from '@/app/dashboard/components/event-header';
+import { useEventsStore } from '@/store/eventsStore';
+import { useTeamsStore } from '@/store/teamsStore';
 import ScreenLoader from '@/components/common/screen-loader';
-import EventCard from '@/components/events/event-card';
-import EventHeader from '@/components/events/event-header';
-
-const DashboardTabs = async () => {
-  const events =  await fetchEvents()
-  const teams = await fetchTeams();
 
 
-  if (!teams || !events) {
+const DashboardTabs = () => {
+  const {events, saveEvents}=useEventsStore()
+  const {teams, saveTeams}=useTeamsStore()
+
+  useEffect(() => {
+    fetchTeams(saveTeams);
+    fetchEvents(saveEvents);
+  }, [saveEvents, saveTeams])
+  
+  if (!events || !teams) {
     return <ScreenLoader />
   }
+
   return (
     <div className='p-3 mt-5 -ml-3'>
       <Tabs defaultValue="team" className="w-full">
