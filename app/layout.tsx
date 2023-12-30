@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import { Inter as FontSans } from "next/font/google"
 import './globals.css'
-import { cn } from '../utils/handlers'
+import { cn } from '@/utils/handlers'
 import ActionLoader from '@/components/common/action-loader'
-import MarginWrapper from '../wrapper/margin-wrapper'
-import { APP_NAME } from '../constants/strings'
+import MarginWrapper from '@/wrapper/margin-wrapper'
+import { APP_NAME } from '@/constants/strings'
 
 
 

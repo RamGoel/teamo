@@ -1,7 +1,7 @@
 "use client";
 import NameImage from '@/components/common/name-image'
 import { Button } from '@/components/ui/button'
-import { useLoaderStore } from '../../../../store/loaderStore'
+import { useLoaderStore } from '@/store/loaderStore'
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@radix-ui/react-dropdown-menu'
 import { Code, MoreHorizontal, CopyIcon, Trash2Icon, PhoneCallIcon, MailIcon } from 'lucide-react'
 import React from 'react'

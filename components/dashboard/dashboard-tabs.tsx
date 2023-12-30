@@ -1,14 +1,13 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import React from 'react'
-import TeamCard from '../teams/team-card'
-import { fetchTeams } from '../../app/dashboard/dashboard.actions';
+import TeamCard from '@/components/teams/team-card'
+import { fetchEvents, fetchTeams } from '@/app/dashboard/dashboard.actions';
 import ScreenLoader from '@/components/common/screen-loader';
-import EventCard from '../events/event-card';
-import EventHeader from '../events/event-header';
-import { fetchEventsFromDB } from '@/app/api/events/route';
+import EventCard from '@/components/events/event-card';
+import EventHeader from '@/components/events/event-header';
 
 const DashboardTabs = async () => {
-  const events =  await (await fetchEventsFromDB()).json();
+  const events =  await fetchEvents()
   const teams = await fetchTeams();
 
 

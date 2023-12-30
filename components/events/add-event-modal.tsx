@@ -1,9 +1,9 @@
 "use client";
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from '@radix-ui/react-dialog'
 import React from 'react'
-import { DialogHeader } from '../ui/dialog'
+import { DialogHeader } from '@/components/ui/dialog'
 import { Plus } from 'lucide-react'
-import { Button } from '../ui/button'
+import { Button } from '@/components/ui/button'
 
 const AddEventModal = () => {
   return (
