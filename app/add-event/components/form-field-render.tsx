@@ -1,7 +1,7 @@
 import React from 'react'
-import { Input } from '../../../components/ui/input'
+import { Input } from '@/components/ui/input'
 import { DropdownMenu, DropdownMenuItem } from '@radix-ui/react-dropdown-menu'
-import { DropdownMenuContent, DropdownMenuTrigger } from '../../../components/ui/dropdown-menu'
+import { DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { FormFieldType } from '@/app/add-event/schema'
 
 export type FieldType = 'TEXT' | 'DATE' | 'DROPDOWN' | 'NUMBER'

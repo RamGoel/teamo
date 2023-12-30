@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from '@/components/common/navbar';
-import DashboardTabs from '../../components/dashboard/dashboard-tabs';
+import DashboardTabs from '@/app/dashboard/components/dashboard-tabs';
 
-const DashboardPage = async () => {
+const DashboardPage = () => {
   return (
     <div>
       <Navbar />

@@ -5,10 +5,14 @@ import { FormFieldType, formFieldsData, formSchema } from './schema'
 import FormFieldRenderer from '@/app/add-event/components/form-field-render'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
+import { addNewEvent } from '../dashboard/dashboard.actions'
+import { useRouter } from 'next/navigation'
 const AddEvent = () => {
-
+    const router=useRouter()
     const onSubmit = async(values:any) => {
-        console.log(values)
+        addNewEvent(values, () => {
+            router.push('/dashboard');
+        })
     }
     return (
         <div className='w-full flex items-center justify-between'>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Loader } from 'lucide-react'
-import { useLoaderStore } from '../../../store/loaderStore'
+import { useLoaderStore } from '@/store/loaderStore'
 
 const ActionLoader = () => {
     return (
