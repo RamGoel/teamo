@@ -5,8 +5,6 @@ import { cn } from '@/utils/handlers'
 import MarginWrapper from '@/wrapper/margin-wrapper'
 import { APP_NAME } from '@/constants/strings'
 
-
-
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
