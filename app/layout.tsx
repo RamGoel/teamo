@@ -4,7 +4,7 @@ import './globals.css'
 import { cn } from '@/utils/handlers'
 import MarginWrapper from '@/wrapper/margin-wrapper'
 import { APP_NAME } from '@/constants/strings'
-
+import { Analytics } from '@vercel/analytics/react'
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -29,6 +29,7 @@ export default function RootLayout({
         <MarginWrapper>
           {children}
         </MarginWrapper>
+        <Analytics />
       </body>
     </html>
   )
